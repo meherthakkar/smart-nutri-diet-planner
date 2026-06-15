@@ -45,8 +45,8 @@ def calculate_metrics(w, h, a, g, act, goal):
     return round(bmi, 1), status, int(cal)
 
 def generate_diet(pref, cond, selected_allergies):
-df = meals_df.copy()
-meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
+    df = meals_df.copy()
+    meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
 
 # Preference Filter
 if pref == "Vegetarian":
