@@ -45,10 +45,7 @@ def calculate_metrics(w, h, a, g, act, goal):
     else: cal = tdee
     return round(bmi, 1), status, int(cal)
 
-def generate_diet(pref, cond, selected_allergies):
 
-    df = meals_df.copy()
-    plan = []
   def generate_diet(pref, cond, selected_allergies):
 
     df = meals_df.copy()
