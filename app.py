@@ -22,13 +22,7 @@ def load_data():
         return pd.DataFrame(), pd.DataFrame()
 
 meals_df, condition_df = load_data()
-st.write("Rows:", len(meals_df))
 
-st.write(
-    meals_df.groupby("MEALS :")["FOODS"]
-    .nunique()
-    .reset_index()
-)
 
 def calculate_metrics(w, h, a, g, act, goal):
     height_m = h / 100
@@ -55,7 +49,12 @@ def generate_diet(pref, cond, selected_allergies):
 
     df = meals_df.copy()
     plan = []
+  def generate_diet(pref, cond, selected_allergies):
+
+    df = meals_df.copy()
+
     used_foods = set()
+    plan = []
 
     for day in range(1, 8):
 
@@ -63,20 +62,22 @@ def generate_diet(pref, cond, selected_allergies):
 
         for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
-            options = df[df["MEALS :"] == meal]
+            options = df[
+                (df["MEALS :"] == meal)
+                &
+                (~df["FOODS"].isin(used_foods))
+            ]
 
-            if not options.empty:
+            if options.empty:
+                options = df[df["MEALS :"] == meal]
 
-                unused = options[
-                    ~options["FOODS"].isin(used_foods)
-                ]
+            if options.empty:
+                row[meal] = "No Food Found"
 
-                if not unused.empty:
-                    options = unused
-
+            else:
                 selected = options.sample(1).iloc[0]
 
-                food = str(selected["FOODS"])
+                food = str(selected["FOODS"]).strip()
 
                 if "beverage" in df.columns:
                     bev = str(selected["beverage"]).strip()
@@ -85,10 +86,8 @@ def generate_diet(pref, cond, selected_allergies):
                         food = food + " + " + bev
 
                 row[meal] = food
-                used_foods.add(str(selected["FOODS"]))
 
-            else:
-                row[meal] = "No Food Found"
+                used_foods.add(str(selected["FOODS"]).strip())
 
         detox = df[df["MEALS :"] == "DETOX DRINK"]
 
