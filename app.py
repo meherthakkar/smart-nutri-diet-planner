@@ -46,18 +46,39 @@ def calculate_metrics(w, h, a, g, act, goal):
 
 def generate_diet(pref, cond, selected_allergies):
 
+    df = meals_df.copy()
+
     plan = []
 
     for day in range(1, 8):
 
-        row = {
-            "Day": f"Day {day}",
-            "BREAKFAST": "Sample Breakfast",
-            "LUNCH": "Sample Lunch",
-            "SNACKS": "Sample Snacks",
-            "DINNER": "Sample Dinner",
-            "DETOX": "Lemon Water"
-        }
+        row = {"Day": f"Day {day}"}
+
+        for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
+
+            options = df[df["MEALS :"] == meal]
+
+            if options.empty:
+                row[meal] = "No Food Found"
+            else:
+                selected = options.sample(1).iloc[0]
+
+                food = str(selected["FOODS"])
+
+                if "beverage" in df.columns:
+                    bev = str(selected["beverage"]).strip()
+
+                    if bev and bev != "nan":
+                        food = food + " + " + bev
+
+                row[meal] = food
+
+        detox = df[df["MEALS :"] == "DETOX DRINK"]
+
+        if not detox.empty:
+            row["DETOX"] = detox.sample(1).iloc[0]["FOODS"]
+        else:
+            row["DETOX"] = "-"
 
         plan.append(row)
 
