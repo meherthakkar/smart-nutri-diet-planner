@@ -46,7 +46,6 @@ def calculate_metrics(w, h, a, g, act, goal):
 
 def generate_diet(pref, cond, selected_allergies):
 
-```
 df = meals_df.copy()
 
 meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
@@ -103,7 +102,6 @@ for day in range(1, 8):
             (df['MEALS :'] == meal) &
             (~df['FOODS'].isin(used_set))
         ]
-
         if options.empty:
             options = df[df['MEALS :'] == meal]
 
