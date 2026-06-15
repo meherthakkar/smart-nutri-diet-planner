@@ -49,19 +49,47 @@ def generate_diet(pref, cond, selected_allergies):
     df = meals_df.copy()
 
     plan = []
+    used_foods = set()
+    plan = []
 
+used_foods = set()
+
+for day in range(1,8):
     for day in range(1, 8):
 
         row = {"Day": f"Day {day}"}
 
-        for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
+      used_foods = set()
 
-            options = df[df["MEALS :"] == meal]
+for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
-            if options.empty:
-                row[meal] = "No Food Found"
-            else:
-                selected = options.sample(1).iloc[0]
+    options = df[
+        (df["MEALS :"] == meal)
+        &
+        (~df["FOODS"].isin(used_foods))
+    ]
+
+    if options.empty:
+        options = df[df["MEALS :"] == meal]
+
+    if options.empty:
+        row[meal] = "No Food Found"
+
+    else:
+        selected = options.sample(1).iloc[0]
+
+        food = str(selected["FOODS"])
+
+        used_foods.add(food)
+
+        if "beverage" in df.columns:
+
+            bev = str(selected["beverage"]).strip()
+
+            if bev and bev != "nan":
+                food = food + " + " + bev
+
+        row[meal] = food
 
                 food = str(selected["FOODS"])
 
