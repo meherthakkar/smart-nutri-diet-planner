@@ -47,59 +47,41 @@ def calculate_metrics(w, h, a, g, act, goal):
 def generate_diet(pref, cond, selected_allergies):
 
     df = meals_df.copy()
-
     plan = []
     used_foods = set()
-    plan = []
 
-used_foods = set()
-
-for day in range(1,8):
     for day in range(1, 8):
 
         row = {"Day": f"Day {day}"}
 
-      used_foods = set()
+        for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
-for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
+            options = df[df["MEALS :"] == meal]
 
-    options = df[
-        (df["MEALS :"] == meal)
-        &
-        (~df["FOODS"].isin(used_foods))
-    ]
+            if not options.empty:
 
-    if options.empty:
-        options = df[df["MEALS :"] == meal]
+                unused = options[
+                    ~options["FOODS"].isin(used_foods)
+                ]
 
-    if options.empty:
-        row[meal] = "No Food Found"
+                if not unused.empty:
+                    options = unused
 
-    else:
-        selected = options.sample(1).iloc[0]
-
-        food = str(selected["FOODS"])
-
-        used_foods.add(food)
-
-        if "beverage" in df.columns:
-
-            bev = str(selected["beverage"]).strip()
-
-            if bev and bev != "nan":
-                food = food + " + " + bev
-
-        row[meal] = food
+                selected = options.sample(1).iloc[0]
 
                 food = str(selected["FOODS"])
 
                 if "beverage" in df.columns:
                     bev = str(selected["beverage"]).strip()
 
-                    if bev and bev != "nan":
+                    if bev and bev.lower() != "nan":
                         food = food + " + " + bev
 
                 row[meal] = food
+                used_foods.add(str(selected["FOODS"]))
+
+            else:
+                row[meal] = "No Food Found"
 
         detox = df[df["MEALS :"] == "DETOX DRINK"]
 
