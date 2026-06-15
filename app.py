@@ -22,6 +22,12 @@ def load_data():
         return pd.DataFrame(), pd.DataFrame()
 
 meals_df, condition_df = load_data()
+st.write("Total rows:", len(meals_df))
+st.write(meals_df["MEALS :"].value_counts())
+
+st.write(
+    meals_df[["MEALS :", "FOODS"]]
+)
 
 def calculate_metrics(w, h, a, g, act, goal):
     height_m = h / 100
