@@ -1,100 +1,100 @@
 MEALS :,FOODS,beverage,PREFERENCE LIST,DIET TAG,AVOID FOR,Other who can have it ,Allergy 
 BREAKFAST,Vegetable oats upma,Green Tea / Black Tea / Masala Tea,Jain/Vegetarian,High fiber Low sugar,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Gluten
-,Moong dal chilla,Green Tea / Lemon Water,Jain/Vegetarian,High protein Low glycemic,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Besan chilla with paneer stuffing,Milk / Almond Milk / Masala Tea,Vegetarian,High protein Balanced,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
-,Vegetable poha with peanuts,Green Tea / Lemon Water,Jain/Vegetarian,Light meal Energy boosting,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Peanut
-,Sprouts salad bowl,Lemon Water / Herbal Tea,Jain/Vegetarian,High protein High fiber,None,All,None
-,Paneer stuffed paratha (multigrain),Milk / Masala Tea,Vegetarian,Balanced meal Moderate carbs,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Dairy, Gluten"
-,Vegetable dalia,Lemon Water / Herbal Tea,Jain/Vegetarian,High fiber Light meal,None,All,Gluten
-,Oats porridge with nuts,Green Tea / Black Coffee,Jain/Vegetarian,High fiber Low sugar,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Gluten, Nuts"
-,Boiled eggs with toast,Black Coffee / Black Tea,Eggetarian,High protein,High Cholesterol,"Diabetes, Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, Acidity, GERD, Lactose Intolerance","Egg, Gluten"
-,Vegetable omelette,Green Tea / Herbal Tea,Eggetarian,High protein,None,All,Egg
-,Paneer bhurji with toast,Milk / Masala Tea,Vegetarian,High protein Balanced,None,All,"Dairy, Gluten"
-,Idli with sambar,Green Tea / Lemon Water,Jain/Vegetarian,Light meal Gut friendly,None,All,None
-,Ragi dosa with chutney,Green Tea / Herbal Tea,Jain/Vegetarian,High fiber Balanced,None,All,None
-,Smoothie bowl (banana + nuts + seeds),Milk / Almond Milk,Jain/Vegetarian,Energy boosting Vitamin rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Nuts
-,Peanut butter whole wheat toast,Black Coffee / Cold Coffee / Hot Coffee,Jain/Vegetarian,Energy boosting Healthy fats,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Peanut, Gluten"
+BREAKFAST,Moong dal chilla,Green Tea / Lemon Water,Jain/Vegetarian,High protein Low glycemic,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+BREAKFAST,Besan chilla with paneer stuffing,Milk / Almond Milk / Masala Tea,Vegetarian,High protein Balanced,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
+BREAKFAST,Vegetable poha with peanuts,Green Tea / Lemon Water,Jain/Vegetarian,Light meal Energy boosting,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Peanut
+BREAKFAST,Sprouts salad bowl,Lemon Water / Herbal Tea,Jain/Vegetarian,High protein High fiber,None,All,None
+BREAKFAST,Paneer stuffed paratha (multigrain),Milk / Masala Tea,Vegetarian,Balanced meal Moderate carbs,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Dairy, Gluten"
+BREAKFAST,Vegetable dalia,Lemon Water / Herbal Tea,Jain/Vegetarian,High fiber Light meal,None,All,Gluten
+BREAKFAST,Oats porridge with nuts,Green Tea / Black Coffee,Jain/Vegetarian,High fiber Low sugar,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Gluten, Nuts"
+BREAKFAST,Boiled eggs with toast,Black Coffee / Black Tea,Eggetarian,High protein,High Cholesterol,"Diabetes, Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, Acidity, GERD, Lactose Intolerance","Egg, Gluten"
+BREAKFAST,Vegetable omelette,Green Tea / Herbal Tea,Eggetarian,High protein,None,All,Egg
+BREAKFAST,Paneer bhurji with toast,Milk / Masala Tea,Vegetarian,High protein Balanced,None,All,"Dairy, Gluten"
+BREAKFAST,Idli with sambar,Green Tea / Lemon Water,Jain/Vegetarian,Light meal Gut friendly,None,All,None
+BREAKFAST,Ragi dosa with chutney,Green Tea / Herbal Tea,Jain/Vegetarian,High fiber Balanced,None,All,None
+BREAKFAST,Smoothie bowl (banana + nuts + seeds),Milk / Almond Milk,Jain/Vegetarian,Energy boosting Vitamin rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Nuts
+BREAKFAST,Peanut butter whole wheat toast,Black Coffee / Cold Coffee / Hot Coffee,Jain/Vegetarian,Energy boosting Healthy fats,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance","Peanut, Gluten"
 ,,,,,,,
 LUNCH,Roti sabzi with dal,Buttermilk / Masala Buttermilk,Jain/Vegetarian,Balanced meal High protein,None,All,Gluten
-,Dal rice with salad,Buttermilk / Coconut Water,Jain/Vegetarian,Balanced meal Comfort,None,All,None
-,Rajma rice,Buttermilk / Coconut Water,Vegetarian,High protein Iron rich,None,All,None
-,Chole with brown rice,Masala Buttermilk / Jeera Water,Vegetarian,High protein High fiber,None,All,None
-,Vegetable pulao with raita,Buttermilk,Vegetarian,Balanced meal,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
-,Tawa pulao,Buttermilk / Coconut Water,Vegetarian,Moderate carbs,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Paneer bhurji with roti,Buttermilk,Vegetarian,High protein,None,All,"Dairy, Gluten"
-,Palak paneer with roti,Buttermilk,Vegetarian,Iron rich High protein,None,All,"Dairy, Gluten"
-,Mixed veg curry with roti,Buttermilk / Jeera Water,Vegetarian,Balanced meal,None,All,Gluten
-,Tofu/ Paneer stir fry with rice,Buttermilk / Coconut Water,Jain/Vegetarian,High protein Low fat,None,All,Soy
-,Vegetable khichdi,Buttermilk,Jain/Vegetarian,Light meal Gut friendly,None,All,None
-,Curd rice with vegetables,Buttermilk / Coconut Water,Vegetarian,Gut friendly,Lactose Intolerance,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
-,Paneer tikka with roti,Buttermilk,Vegetarian,High protein,None,All,Dairy
-,Chicken curry with rice,Plain Water,Non-Vegetarian,High protein,None,All,None
-,Grilled chicken with roti,Coconut Water,Non-Vegetarian,High protein Low fat,None,All,None
-,Egg curry with rice,Jeera Water,Eggetarian,High protein,None,All,Egg
-,Fish curry with rice,Mint Water,Non-Vegetarian,Omega 3 rich,None,All,Fish
-,Chicken biryani (low oil),None,Non-Vegetarian,Moderate fat,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Vegetable biryani (brown rice),None,Vegetarian,Balanced meal,None,All,None
-,Burrito bowl (rice + beans + veggies),None,Jain/Vegetarian,High fiber Balanced,None,All,None
+LUNCH,Dal rice with salad,Buttermilk / Coconut Water,Jain/Vegetarian,Balanced meal Comfort,None,All,None
+LUNCH,Rajma rice,Buttermilk / Coconut Water,Vegetarian,High protein Iron rich,None,All,None
+LUNCH,Chole with brown rice,Masala Buttermilk / Jeera Water,Vegetarian,High protein High fiber,None,All,None
+LUNCH,Vegetable pulao with raita,Buttermilk,Vegetarian,Balanced meal,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
+LUNCH,Tawa pulao,Buttermilk / Coconut Water,Vegetarian,Moderate carbs,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+LUNCH,Paneer bhurji with roti,Buttermilk,Vegetarian,High protein,None,All,"Dairy, Gluten"
+LUNCH,Palak paneer with roti,Buttermilk,Vegetarian,Iron rich High protein,None,All,"Dairy, Gluten"
+LUNCH,Mixed veg curry with roti,Buttermilk / Jeera Water,Vegetarian,Balanced meal,None,All,Gluten
+LUNCH,Tofu/ Paneer stir fry with rice,Buttermilk / Coconut Water,Jain/Vegetarian,High protein Low fat,None,All,Soy
+LUNCH,Vegetable khichdi,Buttermilk,Jain/Vegetarian,Light meal Gut friendly,None,All,None
+LUNCH,Curd rice with vegetables,Buttermilk / Coconut Water,Vegetarian,Gut friendly,Lactose Intolerance,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
+LUNCH,Paneer tikka with roti,Buttermilk,Vegetarian,High protein,None,All,Dairy
+LUNCH,Chicken curry with rice,Plain Water,Non-Vegetarian,High protein,None,All,None
+LUNCH,Grilled chicken with roti,Coconut Water,Non-Vegetarian,High protein Low fat,None,All,None
+LUNCH,Egg curry with rice,Jeera Water,Eggetarian,High protein,None,All,Egg
+LUNCH,Fish curry with rice,Mint Water,Non-Vegetarian,Omega 3 rich,None,All,Fish
+LUNCH,Chicken biryani (low oil),None,Non-Vegetarian,Moderate fat,Obesity,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+LUNCH,Vegetable biryani (brown rice),None,Vegetarian,Balanced meal,None,All,None
+LUNCH,Burrito bowl (rice + beans + veggies),None,Jain/Vegetarian,High fiber Balanced,None,All,None
 ,,,,,,,
 DINNER,Roti with mixed veg sabzi,Warm Water,Jain/Vegetarian,Balanced meal Light,None,All,Gluten
-,Vegetable soup with brown bread,Warm Water / Herbal Tea,Jain/Vegetarian,Low calorie Light meal,None,All,None
-,Paneer tikka salad,Herbal Tea,Vegetarian,High protein Low carb,None,All,Dairy
-,Tofu salad bowl,Warm Water,Jain/Vegetarian,High protein Low fat,None,All,Soy
-,Grilled chicken salad,Herbal Tea / Mint Water,Non-Vegetarian,High protein Low fat,None,All,None
-,Egg bhurji with roti,Warm Water,Eggetarian,High protein,None,All,Egg
-,Vegetable khichdi,Warm Water,Jain/Vegetarian,Light meal Gut friendly,None,All,None
-,Dal with 1â€“2 roti,Warm Water,Jain/Vegetarian,Light meal,None,All,Gluten
-,Stir fried vegetables with tofu,Herbal Tea,Jain/Vegetarian,Low fat High protein,None,All,Soy
-,Chicken soup,Warm Water,Non-Vegetarian,Light meal,None,All,None
-,Clear vegetable soup,Herbal Tea,Jain/Vegetarian,Light meal Gut friendly,None,All,None
-,Paneer bhurji lettuce wrap,Warm Water,Vegetarian,High protein Low carb,None,All,Dairy
-,Whole wheat veggie wrap,Warm Water,Jain/Vegetarian,Balanced meal,None,All,Gluten
-,Chicken wrap (grilled),Warm Water,Non-Vegetarian,High protein,None,All,Gluten
-,Vegetable taco (whole wheat base),Warm Water,Jain/Vegetarian,Balanced meal,None,All,Gluten
-,Paneer taco,Warm Water,Vegetarian,High protein,None,All,Dairy
-,Quinoa vegetable bowl,Warm Water,Jain/Vegetarian,Low calorie Balanced,None,All,None
-,Fish grilled with veggies,Warm Water,Non-Vegetarian,Omega 3 rich,None,All,Fish
-,Moong dal soup,Warm Water,Jain/Vegetarian,Light meal,None,All,None
-,Sprouts chaat,Warm Water,Jain/Vegetarian,High protein Light,None,All,None
+DINNER,Vegetable soup with brown bread,Warm Water / Herbal Tea,Jain/Vegetarian,Low calorie Light meal,None,All,None
+DINNER,Paneer tikka salad,Herbal Tea,Vegetarian,High protein Low carb,None,All,Dairy
+DINNER,Tofu salad bowl,Warm Water,Jain/Vegetarian,High protein Low fat,None,All,Soy
+DINNER,Grilled chicken salad,Herbal Tea / Mint Water,Non-Vegetarian,High protein Low fat,None,All,None
+DINNER,Egg bhurji with roti,Warm Water,Eggetarian,High protein,None,All,Egg
+DINNER,Vegetable khichdi,Warm Water,Jain/Vegetarian,Light meal Gut friendly,None,All,None
+DINNER,Dal with 1Ã¢â‚¬â€œ2 roti,Warm Water,Jain/Vegetarian,Light meal,None,All,Gluten
+DINNER,Stir fried vegetables with tofu,Herbal Tea,Jain/Vegetarian,Low fat High protein,None,All,Soy
+DINNER,Chicken soup,Warm Water,Non-Vegetarian,Light meal,None,All,None
+DINNER,Clear vegetable soup,Herbal Tea,Jain/Vegetarian,Light meal Gut friendly,None,All,None
+DINNER,Paneer bhurji lettuce wrap,Warm Water,Vegetarian,High protein Low carb,None,All,Dairy
+DINNER,Whole wheat veggie wrap,Warm Water,Jain/Vegetarian,Balanced meal,None,All,Gluten
+DINNER,Chicken wrap (grilled),Warm Water,Non-Vegetarian,High protein,None,All,Gluten
+DINNER,Vegetable taco (whole wheat base),Warm Water,Jain/Vegetarian,Balanced meal,None,All,Gluten
+DINNER,Paneer taco,Warm Water,Vegetarian,High protein,None,All,Dairy
+DINNER,Quinoa vegetable bowl,Warm Water,Jain/Vegetarian,Low calorie Balanced,None,All,None
+DINNER,Fish grilled with veggies,Warm Water,Non-Vegetarian,Omega 3 rich,None,All,Fish
+DINNER,Moong dal soup,Warm Water,Jain/Vegetarian,Light meal,None,All,None
+DINNER,Sprouts chaat,Warm Water,Jain/Vegetarian,High protein Light,None,All,None
 ,,,,,,,
 SNACKS,Roasted chana,Milkshake / Smoothie,Jain/Vegetarian,High protein Low calorie,None,All,None
-,"Mixed nuts (almonds, walnuts)",Smoothie / Fresh Juice,Jain/Vegetarian,Healthy fats,None,All,Nuts
-,Fruit bowl,Protein Shake / Milkshake,Jain/Vegetarian,Vitamin rich Light,None,All,None
-,Sprouts chaat,Smoothie,Jain/Vegetarian,High protein Fiber,None,All,None
-,Boiled corn,Fresh Juice,Jain/Vegetarian,Light snack,None,All,None
-,Peanut chaat,Green Tea / Smoothie,Jain/Vegetarian,High protein,None,All,Peanut
-,Protein smoothie,Protein Shake,Jain/Vegetarian,High protein,None,All,Dairy
-,Buttermilk,Buttermilk / Smoothie,Vegetarian,Gut friendly,Lactose Intolerance,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
-,Coconut water,Coconut Water / Fresh Juice,Jain/Vegetarian,Hydrating,None,All,None
-,Roasted makhana,Green Tea,Jain/Vegetarian,Low calorie,None,All,None
-,Vegetable sticks with hummus,Mint Water / Smoothie,Jain/Vegetarian,High fiber,None,All,Sesame
-,Paneer cubes grilled,Milkshake,Vegetarian,High protein,None,All,Dairy
-,Boiled eggs,None,Eggetarian,High protein,High Cholesterol,"Diabetes, Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, Acidity, GERD, Lactose Intolerance",Egg
-,Dark chocolate (small portion),Green Tea / Fresh Juice,Jain/Vegetarian,Low sugar,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Yogurt with seeds,Milk / Smoothie,Vegetarian,Healthy fats,None,All,Dairy
-,Apple slices,Green Tea,Vegetarian,High fiber Low sugar,None,All,None
-,Banana slices,None,Vegetarian,Energy boosting High potassium,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Papaya bowl,None,Vegetarian,Digestion friendly Vitamin rich,None,All,None
-,Watermelon cubes,None,Vegetarian,Hydrating Low calorie,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Orange segments,None,Vegetarian,Vitamin C rich,Acidity GERD,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Lactose Intolerance",None
-,Pomegranate seeds,None,Vegetarian,Iron rich Antioxidant,None,All,None
-,Guava slices,None,Vegetarian,High fiber Low glycemic,None,All,None
-,Mixed fruit bowl,None,Vegetarian,Vitamin rich Balanced,Diabetes,All,None
-,Mango slices,None,Vegetarian,Energy boosting Vitamin rich,Diabetes Obesity,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Pineapple chunks,None,Vegetarian,Vitamin C Digestive,Acidity GERD,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Lactose Intolerance",Nuts
-,Fruit salad with seeds,None,Vegetarian,High fiber Healthy fats,None,All,Nuts
-,Dry fruits mix (dates raisins),None,Vegetarian,Energy dense Iron rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Dates (khajoor),None,Vegetarian,Energy boosting Iron rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
-,Fruit yogurt,Protein Shake / Milkshake,Vegetarian,Probiotic Calcium rich,Lactose Intolerance Diabetes,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
-,Fruit smoothie (no sugar),Milk / Smoothie,Vegetarian,Hydrating Vitamin rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",
+SNACKS,"Mixed nuts (almonds, walnuts)",Smoothie / Fresh Juice,Jain/Vegetarian,Healthy fats,None,All,Nuts
+SNACKS,Fruit bowl,Protein Shake / Milkshake,Jain/Vegetarian,Vitamin rich Light,None,All,None
+SNACKS,Sprouts chaat,Smoothie,Jain/Vegetarian,High protein Fiber,None,All,None
+SNACKS,Boiled corn,Fresh Juice,Jain/Vegetarian,Light snack,None,All,None
+SNACKS,Peanut chaat,Green Tea / Smoothie,Jain/Vegetarian,High protein,None,All,Peanut
+SNACKS,Protein smoothie,Protein Shake,Jain/Vegetarian,High protein,None,All,Dairy
+SNACKS,Buttermilk,Buttermilk / Smoothie,Vegetarian,Gut friendly,Lactose Intolerance,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
+SNACKS,Coconut water,Coconut Water / Fresh Juice,Jain/Vegetarian,Hydrating,None,All,None
+SNACKS,Roasted makhana,Green Tea,Jain/Vegetarian,Low calorie,None,All,None
+SNACKS,Vegetable sticks with hummus,Mint Water / Smoothie,Jain/Vegetarian,High fiber,None,All,Sesame
+SNACKS,Paneer cubes grilled,Milkshake,Vegetarian,High protein,None,All,Dairy
+SNACKS,Boiled eggs,None,Eggetarian,High protein,High Cholesterol,"Diabetes, Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, Acidity, GERD, Lactose Intolerance",Egg
+SNACKS,Dark chocolate (small portion),Green Tea / Fresh Juice,Jain/Vegetarian,Low sugar,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+SNACKS,Yogurt with seeds,Milk / Smoothie,Vegetarian,Healthy fats,None,All,Dairy
+SNACKS,Apple slices,Green Tea,Vegetarian,High fiber Low sugar,None,All,None
+SNACKS,Banana slices,None,Vegetarian,Energy boosting High potassium,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+SNACKS,Papaya bowl,None,Vegetarian,Digestion friendly Vitamin rich,None,All,None
+SNACKS,Watermelon cubes,None,Vegetarian,Hydrating Low calorie,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+SNACKS,Orange segments,None,Vegetarian,Vitamin C rich,Acidity GERD,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Lactose Intolerance",None
+SNACKS,Pomegranate seeds,None,Vegetarian,Iron rich Antioxidant,None,All,None
+SNACKS,Guava slices,None,Vegetarian,High fiber Low glycemic,None,All,None
+SNACKS,Mixed fruit bowl,None,Vegetarian,Vitamin rich Balanced,Diabetes,All,None
+SNACKS,Mango slices,None,Vegetarian,Energy boosting Vitamin rich,Diabetes Obesity,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+SNACKS,Pineapple chunks,None,Vegetarian,Vitamin C Digestive,Acidity GERD,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Lactose Intolerance",Nuts
+SNACKS,Fruit salad with seeds,None,Vegetarian,High fiber Healthy fats,None,All,Nuts
+SNACKS,Dry fruits mix (dates raisins),None,Vegetarian,Energy dense Iron rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
+SNACKS,Dates (khajoor),None,Vegetarian,Energy boosting Iron rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",Dairy
+SNACKS,Fruit yogurt,Protein Shake / Milkshake,Vegetarian,Probiotic Calcium rich,Lactose Intolerance Diabetes,"Diabetes, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD",Dairy
+SNACKS,Fruit smoothie (no sugar),Milk / Smoothie,Vegetarian,Hydrating Vitamin rich,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",
 ,,,,,,,
 DETOX DRINK,Lemon water with honey,None ,Jain/Vegetarian,Detox Hydrating,Diabetes,"Obesity, PCOS, PCOD, Thyroid, Hypertension, Heart Disease, High Cholesterol, Acidity, GERD, Lactose Intolerance",None
-,Jeera water,None ,Jain/Vegetarian,Detox Digestive,None,All,None
-,Cucumber mint water,None ,Jain/Vegetarian,Hydrating Refreshing,None,All,None
-,Apple cider vinegar water,None ,Jain/Vegetarian,Detox,None,All,None
-,Green tea,None ,Jain/Vegetarian,Antioxidant,None,All,None
-,Ginger lemon tea,None ,Jain/Vegetarian,Digestive support,None,All,None
-,Tulsi tea,None ,Jain/Vegetarian,Immunity boosting,None,All,None
-,Cinnamon water,None ,Jain/Vegetarian,Metabolism boosting,None,All,None
-,Fennel (saunf) water,None ,Jain/Vegetarian,Digestive support,None,All,None
-,Amla juice,None ,Jain/Vegetarian,Vitamin rich,None,All,None
+DETOX DRINK,Jeera water,None ,Jain/Vegetarian,Detox Digestive,None,All,None
+DETOX DRINK,Cucumber mint water,None ,Jain/Vegetarian,Hydrating Refreshing,None,All,None
+DETOX DRINK,Apple cider vinegar water,None ,Jain/Vegetarian,Detox,None,All,None
+DETOX DRINK,Green tea,None ,Jain/Vegetarian,Antioxidant,None,All,None
+DETOX DRINK,Ginger lemon tea,None ,Jain/Vegetarian,Digestive support,None,All,None
+DETOX DRINK,Tulsi tea,None ,Jain/Vegetarian,Immunity boosting,None,All,None
+DETOX DRINK,Cinnamon water,None ,Jain/Vegetarian,Metabolism boosting,None,All,None
+DETOX DRINK,Fennel (saunf) water,None ,Jain/Vegetarian,Digestive support,None,All,None
+DETOX DRINK,Amla juice,None ,Jain/Vegetarian,Vitamin rich,None,All,None
