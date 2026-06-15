@@ -47,9 +47,6 @@ def calculate_metrics(w, h, a, g, act, goal):
 def generate_diet(pref, cond, selected_allergies):
     df = meals_df.copy()
     meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
-if selected_allergies and 'Allergy' in df.columns:
-    for allergy in selected_allergies:
-        df = df[~df['Allergy'].str.contains(allergy, na=False, case=False)]
 
     # Filter by Preference
     if pref == "Vegetarian":
