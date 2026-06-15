@@ -12,9 +12,8 @@ st.set_page_config(page_title="Smart  Nutri Diet Planner", layout="wide")
 def load_data():
     try:
         # Load and clean dataset - handle empty values to prevent PDF errors
-        m = pd.read_csv('/content/Main meals dataset.CSV').fillna('')
-        m['MEALS :'] = m['MEALS :'].replace('', method='ffill')
-        c = pd.read_csv('/content/CONDITION.CSV').fillna('')
+      m = pd.read_csv("Main meals dataset.CSV").fillna("")
+c = pd.read_csv("CONDITION.CSV").fillna("")
         return m, c
     except:
         return pd.DataFrame(), pd.DataFrame()
