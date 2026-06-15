@@ -45,49 +45,93 @@ def calculate_metrics(w, h, a, g, act, goal):
     return round(bmi, 1), status, int(cal)
 
 def generate_diet(pref, cond, selected_allergies):
-    df = meals_df.copy()
-    meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
 
-    # Filter by Preference
-    if pref == "Vegetarian":
-        df = df[df['PREFERENCE LIST'].str.contains('Vegetarian|Jain', na=False, case=False)]
-        df = df[~df['FOODS'].str.contains('|'.join(meat_items + ['Egg']), case=False, na=False)]
-    elif pref == "Jain":
-        df = df[df['PREFERENCE LIST'].str.contains('Jain', na=False, case=False)]
-        df = df[~df['FOODS'].str.contains('|'.join(meat_items + ['Egg', 'Onion', 'Garlic', 'Potato']), case=False, na=False)]
-    elif pref == "Eggitarian":
-        df = df[df['PREFERENCE LIST'].str.contains('Vegetarian|Jain|Eggetarian', na=False, case=False)]
-        df = df[~df['FOODS'].str.contains('|'.join(meat_items), case=False, na=False)]
+```
+df = meals_df.copy()
 
-    # Filter by Medical Condition Avoidance
-    if cond != "None":
-        df = df[~df['AVOID FOR'].str.contains(str(cond), na=False, case=False)]
+meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
 
-    # Filter by Allergy (Checks 'Allergy' column in CSV)
-    if selected_allergies:
-        for allergy in selected_allergies:
-            df = df[~df['Allergy'].str.contains(allergy, na=False, case=False)]
+# Preference Filter
+if pref == "Vegetarian":
+    df = df[df['PREFERENCE LIST'].str.contains('Vegetarian|Jain', na=False, case=False)]
+    df = df[~df['FOODS'].str.contains('|'.join(meat_items + ['Egg']), na=False, case=False)]
 
-    plan = []
-    cats = ['BREAKFAST', 'LUNCH', 'SNACKS', 'DINNER']
-    used_foods = set()
-    for day in range(1, 8):
-        row = {"Day": f"Day {day}"}
-        for c in cats:
-            opts = df[(df['MEALS :'] == c) & (~df['FOODS'].isin(used_foods))]
-            if opts.empty: opts = df[df['MEALS :'] == c]
-            if opts.empty:
-                row[c] = "Custom Salad + Water" # Fallback if filters are too strict
+elif pref == "Jain":
+    df = df[df['PREFERENCE LIST'].str.contains('Jain', na=False, case=False)]
+    df = df[~df['FOODS'].str.contains('|'.join(meat_items + ['Egg', 'Onion', 'Garlic', 'Potato']), na=False, case=False)]
+
+elif pref == "Eggitarian":
+    df = df[df['PREFERENCE LIST'].str.contains('Vegetarian|Jain|Eggetarian', na=False, case=False)]
+    df = df[~df['FOODS'].str.contains('|'.join(meat_items), na=False, case=False)]
+
+# Condition Filter
+if cond != "None" and "AVOID FOR" in df.columns:
+    df = df[~df['AVOID FOR'].astype(str).str.contains(cond, na=False, case=False)]
+
+# Allergy Filter
+if selected_allergies and "Allergy" in df.columns:
+    for allergy in selected_allergies:
+        df = df[
+            ~df['Allergy'].astype(str).str.contains(
+                allergy,
+                na=False,
+                case=False
+            )
+        ]
+
+plan = []
+
+used_breakfast = set()
+used_lunch = set()
+used_snacks = set()
+used_dinner = set()
+
+for day in range(1, 8):
+
+    row = {"Day": f"Day {day}"}
+
+    meal_map = {
+        "BREAKFAST": used_breakfast,
+        "LUNCH": used_lunch,
+        "SNACKS": used_snacks,
+        "DINNER": used_dinner
+    }
+
+    for meal, used_set in meal_map.items():
+
+        options = df[
+            (df['MEALS :'] == meal) &
+            (~df['FOODS'].isin(used_set))
+        ]
+
+        if options.empty:
+            options = df[df['MEALS :'] == meal]
+
+        if options.empty:
+            row[meal] = "Custom Meal"
+        else:
+            selected = options.sample(1).iloc[0]
+
+            food = str(selected['FOODS']).strip()
+            bev = str(selected['beverage']).strip()
+
+            if bev and bev.lower() != "none":
+                row[meal] = food + " + " + bev
             else:
-                sel = opts.sample(1).iloc[0]
-                bev = sel['beverage'] if sel['beverage'] else 'Water'
-                row[c] = f"{sel['FOODS']} + {bev}"
-                used_foods.add(sel['FOODS'])
+                row[meal] = food
 
-        detox_pool = meals_df[meals_df['MEALS :']=='DETOX DRINK']['FOODS'].tolist()
-        row['DETOX'] = random.choice(detox_pool) if (day % 2 != 0 and detox_pool) else "---"
-        plan.append(row)
-    return pd.DataFrame(plan)
+            used_set.add(food)
+    detox_options = meals_df[
+        meals_df['MEALS :'] == 'DETOX DRINK'
+    ]['FOODS'].tolist()
+
+    if detox_options:
+        row["DETOX"] = random.choice(detox_options)
+    else:
+        row["DETOX"] = "-"
+    plan.append(row)
+
+return pd.DataFrame(plan)
 
 st.title("🥗  Personalized Diet Planner")
 
