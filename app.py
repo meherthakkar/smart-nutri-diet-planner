@@ -46,12 +46,12 @@ def calculate_metrics(w, h, a, g, act, goal):
     return round(bmi, 1), status, int(cal)
 
 
-  def generate_diet(pref, cond, selected_allergies):
+def generate_diet(pref, cond, selected_allergies):
 
     df = meals_df.copy()
 
-    used_foods = set()
     plan = []
+    used_foods = set()
 
     for day in range(1, 8):
 
@@ -60,19 +60,21 @@ def calculate_metrics(w, h, a, g, act, goal):
         for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
             options = df[
-                (df["MEALS :"] == meal)
+                (df["MEALS :"].astype(str).str.strip() == meal)
                 &
-                (~df["FOODS"].isin(used_foods))
+                (~df["FOODS"].astype(str).isin(used_foods))
             ]
 
             if options.empty:
-                options = df[df["MEALS :"] == meal]
+                options = df[
+                    df["MEALS :"].astype(str).str.strip() == meal
+                ]
 
             if options.empty:
                 row[meal] = "No Food Found"
 
             else:
-                selected = options.sample(1).iloc[0]
+                selected = options.sample(n=1).iloc[0]
 
                 food = str(selected["FOODS"]).strip()
 
@@ -86,10 +88,12 @@ def calculate_metrics(w, h, a, g, act, goal):
 
                 used_foods.add(str(selected["FOODS"]).strip())
 
-        detox = df[df["MEALS :"] == "DETOX DRINK"]
+        detox_options = df[
+            df["MEALS :"].astype(str).str.strip() == "DETOX DRINK"
+        ]
 
-        if not detox.empty:
-            row["DETOX"] = detox.sample(1).iloc[0]["FOODS"]
+        if not detox_options.empty:
+            row["DETOX"] = detox_options.sample(n=1).iloc[0]["FOODS"]
         else:
             row["DETOX"] = "-"
 
