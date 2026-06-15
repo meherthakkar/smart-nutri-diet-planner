@@ -47,6 +47,9 @@ def calculate_metrics(w, h, a, g, act, goal):
 def generate_diet(pref, cond, selected_allergies):
     df = meals_df.copy()
     meat_items = ['Chicken', 'Fish', 'Meat', 'Mutton', 'Beef', 'Prawn', 'Salmon']
+if selected_allergies and 'Allergy' in df.columns:
+    for allergy in selected_allergies:
+        df = df[~df['Allergy'].str.contains(allergy, na=False, case=False)]
 
     # Filter by Preference
     if pref == "Vegetarian":
@@ -93,7 +96,7 @@ st.title("🥗  Personalized Diet Planner")
 
 with st.form("user_data"):
     c1, c2, c3 = st.columns(3)
-    u_name = c1.text_input("Full Name", value="Meher")
+    u_name = c1.text_input("Full Name", value="Mike ")
     u_age = c2.number_input("Age", 10, 100, 25)
     u_gen = c3.selectbox("Gender", ["Male", "Female", "Other"])
     u_h = c1.number_input("Height (cm)", 100, 250, 170)
