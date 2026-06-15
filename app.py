@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -21,8 +20,6 @@ def load_data():
         return pd.DataFrame(), pd.DataFrame()
 
 meals_df, condition_df = load_data()
-st.write("Condition DF Columns:")
-st.write(condition_df.columns.tolist())
 
 def calculate_metrics(w, h, a, g, act, goal):
     height_m = h / 100
