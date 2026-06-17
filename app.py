@@ -67,7 +67,7 @@ if options.empty:
     row[meal] = "No More Unique Foods"
     continue
 else:
-selected = options.sample(n=1).iloc[0]
+    selected = options.sample(n=1).iloc[0]
 
             else:
                 selected = options.sample(n=1).iloc[0]
