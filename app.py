@@ -46,110 +46,118 @@ def calculate_metrics(w, h, a, g, act, goal):
     return round(bmi, 1), status, int(cal)
 
 def generate_diet(pref, cond, selected_allergies):
-    if st.session_state.diet.empty:
-    st.error("No foods available for selected filters. Try removing some allergies or changing condition.")
-    st.stop()
 
     df = meals_df.copy()
 
-    # -------------------------
-    # PREFERENCE FILTER
-    # -------------------------
+    # Preference filter
+    if pref == "Vegetarian":
+        df = df[
+            df["PREFERENCE LIST"]
+            .astype(str)
+            .str.contains("Vegetarian|Jain", case=False, na=False)
+        ]
 
-    if "PREFERENCE LIST" in df.columns:
+    elif pref == "Eggitarian":
+        df = df[
+            df["PREFERENCE LIST"]
+            .astype(str)
+            .str.contains("Vegetarian|Jain|Eggetarian", case=False, na=False)
+        ]
 
-       df = df[
-    df["PREFERENCE LIST"]
-    .astype(str)
-    .str.contains("Vegetarian|Jain", case=False, na=False)
-]
+    elif pref == "Jain":
+        df = df[
+            df["PREFERENCE LIST"]
+            .astype(str)
+            .str.contains("Jain", case=False, na=False)
+        ]
 
-      df = df[
-    df["PREFERENCE LIST"]
-    .astype(str)
-    .str.contains("Vegetarian|Jain|Eggetarian", case=False, na=False)
-]
+    # Dairy allergy
+    if "Dairy" in selected_allergies:
 
-    df = df[
-    df["PREFERENCE LIST"]
-    .astype(str)
-    .str.contains("Jain", case=False, na=False)
-]
+        dairy_pattern = "Milk|Paneer|Curd|Buttermilk|Cheese|Yogurt"
 
-    # -------------------------
-    # DAIRY ALLERGY FILTER
-    # -------------------------
+        df = df[
+            ~df["FOODS"]
+            .astype(str)
+            .str.contains(dairy_pattern, case=False, na=False)
+        ]
 
-  if "Dairy" in selected_allergies:
+        df = df[
+            ~df["beverage"]
+            .astype(str)
+            .str.contains(dairy_pattern, case=False, na=False)
+        ]
 
-    dairy_words = [
-        "Milk",
-        "Paneer",
-        "Curd",
-        "Buttermilk",
-        "Cheese",
-        "Yogurt"
-    ]
+    # Nut allergy
+    if "Nuts" in selected_allergies:
 
-    pattern = "|".join(dairy_words)
+        df = df[
+            ~df["FOODS"]
+            .astype(str)
+            .str.contains(
+                "nut|almond|cashew|walnut|peanut",
+                case=False,
+                na=False
+            )
+        ]
 
-    df = df[
-        ~df["FOODS"]
-        .astype(str)
-        .str.contains(pattern, case=False, na=False)
-    ]
+    # Condition filter
+    if cond != "None":
 
-    df = df[
-        ~df["beverage"]
-        .astype(str)
-        .str.contains(pattern, case=False, na=False)
-    ]
-
-    # -------------------------
-    # NUT ALLERGY FILTER
-    # -------------------------
-if "Nuts" in selected_allergies:
-
-    df = df[
-        ~df["FOODS"]
-        .astype(str)
-        .str.contains(
-            "nut|almond|cashew|walnut|peanut",
-            case=False,
-            na=False
-        )
-    ]
-
-    # -------------------------
-    # CONDITION FILTER
-    # -------------------------
-if cond != "None":
-
-    df = df[
-        (
-            df["Other who can have it"]
+        df = df[
+            ~df["AVOID FOR"]
             .astype(str)
             .str.contains(cond, case=False, na=False)
-        )
-        |
-        (
-            df["Other who can have it"]
-            .astype(str)
-            .str.contains("All", case=False, na=False)
-        )
-    ]
+        ]
 
-    df = df[
-        ~df["AVOID FOR"]
-        .astype(str)
-        .str.contains(cond, case=False, na=False)
-    ]
-    # -------------------------
-    # START DIET GENERATION
-    # -------------------------
+    if df.empty:
+        st.error(
+            "No foods available for selected filters."
+        )
+        return pd.DataFrame()
 
     plan = []
     used_foods = set()
+
+    for day in range(1, 8):
+
+        row = {"Day": f"Day {day}"}
+
+        for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
+
+            options = df[
+                (df["MEALS :"] == meal)
+                &
+                (~df["FOODS"].isin(used_foods))
+            ]
+
+            if options.empty:
+                row[meal] = "No More Unique Foods"
+                continue
+
+            selected = options.sample(1).iloc[0]
+
+            food = str(selected["FOODS"])
+
+            beverage = str(selected["beverage"]).strip()
+
+            if beverage and beverage.lower() != "nan":
+                food = food + " + " + beverage
+
+            row[meal] = food
+
+            used_foods.add(str(selected["FOODS"]))
+
+        detox = df[df["MEALS :"] == "DETOX DRINK"]
+
+        if not detox.empty:
+            row["DETOX"] = detox.sample(1).iloc[0]["FOODS"]
+        else:
+            row["DETOX"] = "-"
+
+        plan.append(row)
+
+    return pd.DataFrame(plan)
 
 st.title("🥗  Personalized Diet Planner")
 
