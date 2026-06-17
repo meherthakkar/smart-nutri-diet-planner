@@ -46,6 +46,9 @@ def calculate_metrics(w, h, a, g, act, goal):
     return round(bmi, 1), status, int(cal)
 
 def generate_diet(pref, cond, selected_allergies):
+    if st.session_state.diet.empty:
+    st.error("No foods available for selected filters. Try removing some allergies or changing condition.")
+    st.stop()
 
     df = meals_df.copy()
 
