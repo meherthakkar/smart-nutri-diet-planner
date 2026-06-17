@@ -63,8 +63,11 @@ for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
         &
         (~df["FOODS"].astype(str).isin(used_foods))
     ]
-    if options.empty:
-                row[meal] = "No Food Found"
+if options.empty:
+    row[meal] = "No More Unique Foods"
+    continue
+
+selected = options.sample(n=1).iloc[0]
 
             else:
                 selected = options.sample(n=1).iloc[0]
