@@ -45,10 +45,30 @@ def calculate_metrics(w, h, a, g, act, goal):
     else: cal = tdee
     return round(bmi, 1), status, int(cal)
 
-
 def generate_diet(pref, cond, selected_allergies):
 
     df = meals_df.copy()
+
+    # Preference Filter
+    if "PREFERENCE LIST" in df.columns:
+
+        if pref == "Vegetarian":
+            df = df[
+                df["PREFERENCE LIST"].astype(str)
+                .str.contains("Vegetarian|Jain", case=False, na=False)
+            ]
+
+        elif pref == "Eggitarian":
+            df = df[
+                df["PREFERENCE LIST"].astype(str)
+                .str.contains("Eggetarian|Vegetarian|Jain", case=False, na=False)
+            ]
+
+        elif pref == "Jain":
+            df = df[
+                df["PREFERENCE LIST"].astype(str)
+                .str.contains("Jain", case=False, na=False)
+            ]
 
     plan = []
     used_foods = set()
@@ -56,44 +76,49 @@ def generate_diet(pref, cond, selected_allergies):
     for day in range(1, 8):
 
         row = {"Day": f"Day {day}"}
-for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
-    options = df[
-        (df["MEALS :"].astype(str).str.strip() == meal)
-        &
-        (~df["FOODS"].astype(str).isin(used_foods))
-    ]
-if options.empty:
-    row[meal] = "No More Unique Foods"
-    continue
-else:
-    selected = options.sample(n=1).iloc[0]
+        for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
 
-                food = str(selected["FOODS"]).strip()
+            options = df[
+                (df["MEALS :"].astype(str).str.strip() == meal)
+                &
+                (~df["FOODS"].astype(str).isin(used_foods))
+            ]
 
-                if "beverage" in df.columns:
-                    bev = str(selected["beverage"]).strip()
+            if options.empty:
+                row[meal] = "No More Unique Foods"
+                continue
 
-                    if bev and bev.lower() != "nan":
-                        food = food + " + " + bev
+            selected = options.sample(n=1).iloc[0]
 
-                row[meal] = food
+            food = str(selected["FOODS"]).strip()
 
-                used_foods.add(str(selected["FOODS"]).strip())
+            if "CALORIES" in df.columns:
+                food += f" ({selected['CALORIES']} kcal)"
+
+            if "beverage" in df.columns:
+
+                bev = str(selected["beverage"]).strip()
+
+                if bev and bev.lower() not in ["nan", "none", ""]:
+                    food += " + " + bev
+
+            row[meal] = food
+
+            used_foods.add(str(selected["FOODS"]).strip())
 
         detox_options = df[
             df["MEALS :"].astype(str).str.strip() == "DETOX DRINK"
         ]
 
         if not detox_options.empty:
-            row["DETOX"] = detox_options.sample(n=1).iloc[0]["FOODS"]
+            row["DETOX"] = detox_options.sample(1).iloc[0]["FOODS"]
         else:
             row["DETOX"] = "-"
 
         plan.append(row)
 
     return pd.DataFrame(plan)
-
 st.title("🥗  Personalized Diet Planner")
 
 with st.form("user_data"):
