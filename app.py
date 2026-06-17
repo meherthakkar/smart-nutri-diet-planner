@@ -112,15 +112,27 @@ def generate_diet(pref, cond, selected_allergies):
     # -------------------------
     # CONDITION FILTER
     # -------------------------
+if cond != "None":
 
-    if cond != "None" and "AVOID FOR" in df.columns:
-
-        df = df[
-            ~df["AVOID FOR"]
+    df = df[
+        (
+            df["Other who can have it"]
             .astype(str)
             .str.contains(cond, case=False, na=False)
-        ]
+        )
+        |
+        (
+            df["Other who can have it"]
+            .astype(str)
+            .str.contains("All", case=False, na=False)
+        )
+    ]
 
+    df = df[
+        ~df["AVOID FOR"]
+        .astype(str)
+        .str.contains(cond, case=False, na=False)
+    ]
     # -------------------------
     # START DIET GENERATION
     # -------------------------
