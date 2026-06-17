@@ -69,9 +69,6 @@ if options.empty:
 else:
     selected = options.sample(n=1).iloc[0]
 
-            else:
-                selected = options.sample(n=1).iloc[0]
-
                 food = str(selected["FOODS"]).strip()
 
                 if "beverage" in df.columns:
