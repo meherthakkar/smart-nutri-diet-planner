@@ -58,26 +58,23 @@ def generate_diet(pref, cond, selected_allergies):
 
     if "PREFERENCE LIST" in df.columns:
 
-        if pref == "Vegetarian":
-            df = df[
-                df["PREFERENCE LIST"]
-                .astype(str)
-                .str.contains("Vegetarian|Jain", case=False, na=False)
-            ]
+       df = df[
+    df["PREFERENCE LIST"]
+    .astype(str)
+    .str.contains("Vegetarian|Jain", case=False, na=False)
+]
 
-        elif pref == "Eggitarian":
-            df = df[
-                df["PREFERENCE LIST"]
-                .astype(str)
-                .str.contains("Eggetarian|Vegetarian|Jain", case=False, na=False)
-            ]
+      df = df[
+    df["PREFERENCE LIST"]
+    .astype(str)
+    .str.contains("Vegetarian|Jain|Eggetarian", case=False, na=False)
+]
 
-        elif pref == "Jain":
-            df = df[
-                df["PREFERENCE LIST"]
-                .astype(str)
-                .str.contains("Jain", case=False, na=False)
-            ]
+    df = df[
+    df["PREFERENCE LIST"]
+    .astype(str)
+    .str.contains("Jain", case=False, na=False)
+]
 
     # -------------------------
     # DAIRY ALLERGY FILTER
