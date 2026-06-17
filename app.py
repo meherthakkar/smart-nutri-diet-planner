@@ -58,15 +58,16 @@ def generate_diet(pref, cond, selected_allergies):
         row = {"Day": f"Day {day}"}
 
         for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
-options = df[
+        options = df[
     (df["MEALS :"].astype(str).str.strip() == meal)
     &
     (~df["FOODS"].astype(str).isin(used_foods))
-    ]
+]
 
 if options.empty:
-    row[meal] = "No More Unique Foods"
-    continue
+    options = df[
+        df["MEALS :"].astype(str).str.strip() == meal
+    ]
 
             if options.empty:
                 row[meal] = "No Food Found"
