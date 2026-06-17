@@ -80,34 +80,45 @@ def generate_diet(pref, cond, selected_allergies):
     # DAIRY ALLERGY FILTER
     # -------------------------
 
-    if "Dairy" in selected_allergies:
+  if "Dairy" in selected_allergies:
 
-        dairy_words = [
-            "milk",
-            "paneer",
-            "cheese",
-            "curd",
-            "yogurt",
-            "buttermilk",
-            "lassi",
-            "ghee",
-            "cream"
-        ]
+    dairy_words = [
+        "Milk",
+        "Paneer",
+        "Curd",
+        "Buttermilk",
+        "Cheese",
+        "Yogurt"
+    ]
 
-        pattern = "|".join(dairy_words)
+    pattern = "|".join(dairy_words)
 
-        df = df[
-            ~df["FOODS"]
-            .astype(str)
-            .str.contains(pattern, case=False, na=False)
-        ]
+    df = df[
+        ~df["FOODS"]
+        .astype(str)
+        .str.contains(pattern, case=False, na=False)
+    ]
 
-        if "beverage" in df.columns:
-            df = df[
-                ~df["beverage"]
-                .astype(str)
-                .str.contains(pattern, case=False, na=False)
-            ]
+    df = df[
+        ~df["beverage"]
+        .astype(str)
+        .str.contains(pattern, case=False, na=False)
+    ]
+
+    # -------------------------
+    # NUT ALLERGY FILTER
+    # -------------------------
+if "Nuts" in selected_allergies:
+
+    df = df[
+        ~df["FOODS"]
+        .astype(str)
+        .str.contains(
+            "nut|almond|cashew|walnut|peanut",
+            case=False,
+            na=False
+        )
+    ]
 
     # -------------------------
     # CONDITION FILTER
