@@ -50,7 +50,7 @@ def generate_diet(pref, cond, selected_allergies):
     df = meals_df.copy()
 
     # Preference filter
- if pref == "Vegetarian":
+    if pref == "Vegetarian":
 
     df = df[
         (
@@ -61,7 +61,7 @@ def generate_diet(pref, cond, selected_allergies):
         )
     ]
 
-   elif pref == "Eggitarian":
+    elif pref == "Eggitarian":
 
     df = df[
         (
