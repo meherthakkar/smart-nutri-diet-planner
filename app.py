@@ -63,7 +63,7 @@ def generate_diet(pref, cond, selected_allergies):
 
      elif pref == "Eggitarian":
 
-    df = df[
+     df = df[
         (
             df["PREFERENCE LIST"]
             .astype(str)
