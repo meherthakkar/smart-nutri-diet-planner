@@ -61,7 +61,7 @@ def generate_diet(pref, cond, selected_allergies):
         )
     ]
 
-    elif pref == "Eggitarian":
+     elif pref == "Eggitarian":
 
     df = df[
         (
