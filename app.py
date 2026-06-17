@@ -58,6 +58,7 @@ def generate_diet(pref, cond, selected_allergies):
         row = {"Day": f"Day {day}"}
 
         for meal in ["BREAKFAST", "LUNCH", "SNACKS", "DINNER"]:
+            
         options = df[
     (df["MEALS :"].astype(str).str.strip() == meal)
     &
