@@ -87,7 +87,7 @@ def generate_diet(pref, cond, selected_allergies):
 
     elif pref == "Jain":
 
-     df = df[
+    df = df[
         df["PREFERENCE LIST"]
         .astype(str)
         .str.contains("Jain", case=False, na=False)
